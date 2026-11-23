@@ -483,10 +483,6 @@ footer{margin-top:24px;text-align:center;font-size:13px;opacity:.6}
 """
 
 SCRIPT = """
-function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
- speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
- const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
-if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
 function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
  [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
  const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
@@ -498,7 +494,6 @@ TITLE = "Yaşayan Sözlük"
 def page(e, prev, nxt):
     svg, css = A[e["slug"]]
     h = html.escape
-    say = f'{e["name"]}. Anlamı: {e["meaning"]} Etimolojik kökeni: {e["origin"]}.' + (f' Örnek cümle: {e["sentence"]}' if e["sentence"] else "")
     ex = f'<b>Örnek cümle</b><p class="ex">“{h(e["sentence"])}”</p>' if e["sentence"] else ""
     return f"""<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -511,7 +506,6 @@ def page(e, prev, nxt):
 <b>Anlamı</b><p>{h(e["meaning"])}</p>
 <b>Etimolojik kökeni</b><p>{h(e["origin"])}</p>
 {ex}
-<button class="btn" onclick='speak({json.dumps(say, ensure_ascii=False)})'>🔊 Dinle</button>
 </div>
 <nav><a href="../{prev["slug"]}/">← {h(prev["name"])}</a><a href="../">Tüm harfler</a><a href="../{nxt["slug"]}/">{h(nxt["name"])} →</a></nav>
 </main><script>{SCRIPT}</script></body></html>"""
@@ -554,15 +548,17 @@ def build_qr():
         tw = d.textlength(label, font=font); d.text(((w - tw) / 2, hgt - 10), label, fill="black", font=font)
         canvas.save(os.path.join(qdir, f"{e['letter']}_{e['slug']}.png"), dpi=(300, 300))
         tiles.append(canvas)
-    # A4 sheet @150dpi: 1240x1754, 3 columns x 5 rows, each QR printed ~4.5 cm wide
-    sheet = Image.new("RGB", (1240, 1754), "white"); cell = 340
+    # A4 sheet @300dpi (2480x3508): 4 columns, each QR ~4.5 cm wide, cut along the grey lines
+    sheet = Image.new("RGB", (2480, 3508), "white"); cols = 4; tw = 530
+    th = int(tw * tiles[0].size[1] / tiles[0].size[0]); gx = (2480 - cols * tw) // (cols + 1); gy = 60
+    dr = ImageDraw.Draw(sheet)
     for i, t in enumerate(tiles):
-        t2 = t.resize((cell - 40, int((cell - 40) * t.size[1] / t.size[0])))
-        x = 50 + (i % 3) * (cell + 50); y = 40 + (i // 3) * (t2.size[1] + 30)
+        t2 = t.resize((tw, int(tw * t.size[1] / t.size[0])), Image.NEAREST)
+        x = gx + (i % cols) * (tw + gx); y = 120 + (i // cols) * (th + gy)
         sheet.paste(t2, (x, y))
-        ImageDraw.Draw(sheet).rectangle([x - 6, y - 6, x + t2.size[0] + 6, y + t2.size[1] + 6], outline="#bbbbbb")
-    sheet.save(os.path.join(qdir, "TUM_QR_KODLARI_A4.pdf"), resolution=150)
-    sheet.save(os.path.join(qdir, "TUM_QR_KODLARI_A4.png"), dpi=(150, 150))
+        dr.rectangle([x - 10, y - 10, x + tw + 10, y + t2.size[1] + 10], outline="#aaaaaa", width=2)
+    sheet.save(os.path.join(qdir, "TUM_QR_KODLARI_A4.pdf"), resolution=300)
+    sheet.save(os.path.join(qdir, "TUM_QR_KODLARI_A4.png"), dpi=(300, 300))
 
 if __name__ == "__main__":
     build()

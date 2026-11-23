@@ -35,14 +35,9 @@
 <b>Anlamı</b><p>Eski Türklerde saz çalarak şiirler, destanlar söyleyen halk şairi.</p>
 <b>Etimolojik kökeni</b><p>Türkçe</p>
 <b>Örnek cümle</b><p class="ex">“Ozanlar şiirlerini çok güzel söylediler.”</p>
-<button class="btn" onclick='speak("Ozan. Anlamı: Eski Türklerde saz çalarak şiirler, destanlar söyleyen halk şairi. Etimolojik kökeni: Türkçe. Örnek cümle: Ozanlar şiirlerini çok güzel söylediler.")'>🔊 Dinle</button>
 </div>
 <nav><a href="../nihan/">← Nihan</a><a href="../">Tüm harfler</a><a href="../asel/">Asel →</a></nav>
 </main><script>
-function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
- speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
- const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
-if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
 function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
  [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
  const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);

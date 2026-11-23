@@ -1,0 +1,51 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emir · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.paper{transform-origin:150px 68px;animation:unroll 7s ease-out infinite}
+@keyframes unroll{0%{transform:scaleY(0)}20%,92%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+.roll{animation:rolldown 7s ease-out infinite}
+@keyframes rolldown{0%{transform:translateY(-180px)}20%,92%{transform:translateY(0)}100%{transform:translateY(-180px)}}
+.title{font:bold 26px serif;text-anchor:middle;fill:#4e342e;letter-spacing:4px}
+.ln{stroke-dasharray:140;stroke-dashoffset:140;animation:write 7s linear infinite}
+@keyframes write{0%,15%{stroke-dashoffset:140}35%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:140}}
+.seal{transform-origin:190px 232px;opacity:0;animation:stamp 7s ease-in infinite}
+@keyframes stamp{0%,55%{opacity:0;transform:scale(3)}62%{opacity:1;transform:scale(.9)}66%,92%{opacity:1;transform:scale(1)}100%{opacity:0}}
+.crown{animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+</style></head>
+<body style="--c:#ffcc80"><main>
+<div class="top"><div class="badge">E</div><div><p class="harf">E Harfi</p><h1>Emir</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Emir animasyonu">
+<rect width="300" height="300" fill="#fff3e0"/>
+<g class="crown"><g transform="translate(150 34)"><polygon points="-34,14 -34,-14 -17,2 0,-20 17,2 34,-14 34,14" fill="#ffc107" stroke="#ff8f00" stroke-width="3"/><circle cx="0" cy="6" r="4" fill="#e53935"/></g></g>
+<rect x="68" y="58" width="164" height="20" rx="10" fill="#d7ccc8" stroke="#6d4c41" stroke-width="3"/>
+<g class="paper"><rect x="78" y="68" width="144" height="190" fill="#fffde7" stroke="#8d6e63" stroke-width="3"/>
+ <text x="150" y="104" class="title">EMİR</text>
+ <path class="ln" style="animation-delay:1.0s" d="M95,128 q12,-6 24,0 t24,0 t24,0 t24,0 t14,0" stroke="#5d4037" stroke-width="2.5" fill="none"/><path class="ln" style="animation-delay:1.3s" d="M95,148 q12,-6 24,0 t24,0 t24,0 t24,0 t14,0" stroke="#5d4037" stroke-width="2.5" fill="none"/><path class="ln" style="animation-delay:1.6s" d="M95,168 q12,-6 24,0 t24,0 t24,0 t24,0 t14,0" stroke="#5d4037" stroke-width="2.5" fill="none"/><path class="ln" style="animation-delay:1.9s" d="M95,188 q12,-6 24,0 t24,0 t24,0 t24,0 t14,0" stroke="#5d4037" stroke-width="2.5" fill="none"/><path class="ln" style="animation-delay:2.2s" d="M95,208 q12,-6 24,0 t24,0 t24,0 t24,0 t14,0" stroke="#5d4037" stroke-width="2.5" fill="none"/>
+</g>
+<rect class="roll" x="68" y="248" width="164" height="20" rx="10" fill="#d7ccc8" stroke="#6d4c41" stroke-width="3"/>
+<g class="seal"><circle cx="190" cy="232" r="18" fill="#c62828"/><circle cx="190" cy="232" r="11" fill="none" stroke="#ef9a9a" stroke-width="2"/></g>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Bir işin yapılmasını veya yapılmamasını bildiren söz, buyruk, talimat.</p>
+<b>Etimolojik kökeni</b><p>Arapça</p>
+<b>Örnek cümle</b><p class="ex">“Kralın emrini yerine getirmeliyiz.”</p>
+<button class="btn" onclick='speak("Emir. Anlamı: Bir işin yapılmasını veya yapılmamasını bildiren söz, buyruk, talimat. Etimolojik kökeni: Arapça. Örnek cümle: Kralın emrini yerine getirmeliyiz.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../doga/">← Doğa</a><a href="../">Tüm harfler</a><a href="../fahriye/">Fahriye →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

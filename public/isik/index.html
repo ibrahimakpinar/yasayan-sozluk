@@ -1,0 +1,47 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Işık · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.dark{animation:dawn 6s ease-in-out infinite}
+@keyframes dawn{0%,10%{opacity:.92}45%,85%{opacity:0}100%{opacity:.92}}
+.glow{transform-origin:150px 120px;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.rays{transform-origin:150px 120px;animation:spin 8s linear infinite}
+</style></head>
+<body style="--c:#fff176"><main>
+<div class="top"><div class="badge">I</div><div><p class="harf">I Harfi</p><h1>Işık</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Işık animasyonu">
+<defs><radialGradient id="sunglow"><stop offset="0" stop-color="#fffde7"/><stop offset=".5" stop-color="#fff59d" stop-opacity=".8"/><stop offset="1" stop-color="#fff59d" stop-opacity="0"/></radialGradient></defs>
+<rect width="300" height="300" fill="#e1f5fe"/>
+<path d="M0,240 H300 V300 H0Z" fill="#aed581"/>
+<g><rect x="30" y="195" width="50" height="45" fill="#ef9a9a"/><polygon points="25,195 55,170 85,195" fill="#c62828"/><rect x="48" y="215" width="14" height="25" fill="#6d4c41"/></g>
+<g><rect x="240" y="190" width="10" height="50" fill="#795548"/><circle cx="245" cy="182" r="22" fill="#66bb6a"/></g>
+<rect class="dark" width="300" height="300" fill="#0b1026"/>
+<circle class="glow" cx="150" cy="120" r="110" fill="url(#sunglow)"/>
+<g class="rays"><rect x="147" y="18" width="6" height="44" rx="3" fill="#fdd835" transform="rotate(0.0 150 120)"/><rect x="147" y="18" width="6" height="30" rx="3" fill="#fdd835" transform="rotate(22.5 150 120)"/><rect x="147" y="18" width="6" height="44" rx="3" fill="#fdd835" transform="rotate(45.0 150 120)"/><rect x="147" y="18" width="6" height="30" rx="3" fill="#fdd835" transform="rotate(67.5 150 120)"/><rect x="147" y="18" width="6" height="44" rx="3" fill="#fdd835" transform="rotate(90.0 150 120)"/><rect x="147" y="18" width="6" height="30" rx="3" fill="#fdd835" transform="rotate(112.5 150 120)"/><rect x="147" y="18" width="6" height="44" rx="3" fill="#fdd835" transform="rotate(135.0 150 120)"/><rect x="147" y="18" width="6" height="30" rx="3" fill="#fdd835" transform="rotate(157.5 150 120)"/><rect x="147" y="18" width="6" height="44" rx="3" fill="#fdd835" transform="rotate(180.0 150 120)"/><rect x="147" y="18" width="6" height="30" rx="3" fill="#fdd835" transform="rotate(202.5 150 120)"/><rect x="147" y="18" width="6" height="44" rx="3" fill="#fdd835" transform="rotate(225.0 150 120)"/><rect x="147" y="18" width="6" height="30" rx="3" fill="#fdd835" transform="rotate(247.5 150 120)"/><rect x="147" y="18" width="6" height="44" rx="3" fill="#fdd835" transform="rotate(270.0 150 120)"/><rect x="147" y="18" width="6" height="30" rx="3" fill="#fdd835" transform="rotate(292.5 150 120)"/><rect x="147" y="18" width="6" height="44" rx="3" fill="#fdd835" transform="rotate(315.0 150 120)"/><rect x="147" y="18" width="6" height="30" rx="3" fill="#fdd835" transform="rotate(337.5 150 120)"/></g>
+<circle cx="150" cy="120" r="46" fill="#ffeb3b" stroke="#f9a825" stroke-width="4"/>
+<circle cx="135" cy="112" r="5" fill="#5d4037"/><circle cx="165" cy="112" r="5" fill="#5d4037"/>
+<path d="M132,130 Q150,146 168,130" stroke="#5d4037" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Bir yeri aydınlatmaya yarayan araç.</p>
+<b>Etimolojik kökeni</b><p>Türkçe</p>
+<b>Örnek cümle</b><p class="ex">“Güneş ışığı bizi aydınlatır.”</p>
+<button class="btn" onclick='speak("Işık. Anlamı: Bir yeri aydınlatmaya yarayan araç. Etimolojik kökeni: Türkçe. Örnek cümle: Güneş ışığı bizi aydınlatır.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../giray/">← Giray</a><a href="../">Tüm harfler</a><a href="../ibrahim/">İbrahim →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

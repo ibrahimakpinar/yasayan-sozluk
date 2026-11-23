@@ -1,0 +1,50 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Giray · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.crown{animation:crown 5s ease-in-out infinite}
+@keyframes crown{0%{transform:translateY(-150px)}30%{transform:translateY(0)}36%{transform:translateY(-10px)}42%,90%{transform:translateY(0)}100%{transform:translateY(-150px)}}
+.bolt{animation:flash 1s steps(2) infinite}
+@keyframes flash{50%{fill:#fff}}
+.spin2{transform-box:fill-box;transform-origin:center;animation:spin 4s linear infinite}
+.spark{font-size:22px;fill:#ffb300;animation:tw 2.5s ease-in-out infinite}
+</style></head>
+<body style="--c:#ffab91"><main>
+<div class="top"><div class="badge">G</div><div><p class="harf">G Harfi</p><h1>Giray</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Giray animasyonu">
+<rect width="300" height="300" fill="#efebe9"/>
+<g class="shield">
+ <path d="M90,90 H210 V170 Q210,240 150,280 Q90,240 90,170Z" fill="#ff8a65" stroke="#3e2723" stroke-width="5"/>
+ <path d="M90,150 H210 V170 Q210,240 150,280 Q90,240 90,170Z" fill="#81d4fa"/>
+ <path d="M150,150 H210 V170 Q210,240 150,280Z" fill="#9ccc65"/>
+ <path d="M90,90 H210 V170 Q210,240 150,280 Q90,240 90,170Z" fill="none" stroke="#3e2723" stroke-width="5"/>
+ <line x1="90" y1="150" x2="210" y2="150" stroke="#3e2723" stroke-width="4"/><line x1="150" y1="150" x2="150" y2="280" stroke="#3e2723" stroke-width="4"/>
+ <polygon class="bolt" points="125,165 108,200 122,200 112,232 136,192 122,192 132,165" fill="#ffeb3b" stroke="#3e2723" stroke-width="2"/>
+ <g transform="translate(180 200) scale(.38)"><path class="spin2" d="M0,-50 L12,-16 L48,-16 L19,6 L30,40 L0,19 L-30,40 L-19,6 L-48,-16 L-12,-16Z" fill="#ffeb3b" stroke="#3e2723" stroke-width="5"/></g>
+</g>
+<g class="crown"><polygon points="105,135 105,95 128,118 150,85 172,118 195,95 195,135" fill="#ffeb3b" stroke="#3e2723" stroke-width="4"/>
+ <circle cx="150" cy="122" r="6" fill="#e53935"/><circle cx="124" cy="126" r="4" fill="#1e88e5"/><circle cx="176" cy="126" r="4" fill="#1e88e5"/></g>
+<text class="spark" style="animation-delay:0s" x="70" y="80">✦</text><text class="spark" style="animation-delay:0.5s" x="230" y="70">✦</text><text class="spark" style="animation-delay:1s" x="60" y="200">✦</text><text class="spark" style="animation-delay:1.5s" x="240" y="210">✦</text><text class="spark" style="animation-delay:2s" x="150" y="40">✦</text>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Tarihte Kırım hanlarına verilen san.</p>
+<b>Etimolojik kökeni</b><p>Türkçe</p>
+<b>Örnek cümle</b><p class="ex">“Girayımız dört yaşına bastı.”</p>
+<button class="btn" onclick='speak("Giray. Anlamı: Tarihte Kırım hanlarına verilen san. Etimolojik kökeni: Türkçe. Örnek cümle: Girayımız dört yaşına bastı.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../fahriye/">← Fahriye</a><a href="../">Tüm harfler</a><a href="../isik/">Işık →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

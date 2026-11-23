@@ -1,0 +1,49 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Can · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.big{animation:beat 1s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes beat{0%,100%{transform:scale(2.4)}15%{transform:scale(2.8)}30%{transform:scale(2.4)}45%{transform:scale(2.7)}}
+.mini{opacity:0;animation:pop 4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pop{0%{opacity:0;transform:scale(.1) translateY(60px)}15%{opacity:1;transform:scale(.45) translateY(0)}70%{opacity:1;transform:scale(.45) translateY(-60px)}100%{opacity:0;transform:scale(.45) translateY(-110px)}}
+.cat{animation:nod 2s ease-in-out infinite}
+@keyframes nod{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.nine{font:bold 30px sans-serif;text-anchor:middle;fill:#c2185b}
+</style></head>
+<body style="--c:#ef9a9a"><main>
+<div class="top"><div class="badge">C</div><div><p class="harf">C Harfi</p><h1>Can</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Can animasyonu">
+<rect width="300" height="300" fill="#fce4ec"/>
+<g transform="translate(30 120)"><path class="mini" style="animation-delay:0.0s" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(.45)" fill="#f06292"/></g><g transform="translate(60 120)"><path class="mini" style="animation-delay:0.45s" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(.45)" fill="#f06292"/></g><g transform="translate(90 120)"><path class="mini" style="animation-delay:0.9s" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(.45)" fill="#f06292"/></g><g transform="translate(120 120)"><path class="mini" style="animation-delay:1.35s" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(.45)" fill="#f06292"/></g><g transform="translate(150 120)"><path class="mini" style="animation-delay:1.8s" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(.45)" fill="#f06292"/></g><g transform="translate(180 120)"><path class="mini" style="animation-delay:2.25s" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(.45)" fill="#f06292"/></g><g transform="translate(210 120)"><path class="mini" style="animation-delay:2.7s" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(.45)" fill="#f06292"/></g><g transform="translate(240 120)"><path class="mini" style="animation-delay:3.15s" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(.45)" fill="#f06292"/></g><g transform="translate(270 120)"><path class="mini" style="animation-delay:3.6s" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(.45)" fill="#f06292"/></g>
+<g transform="translate(150 120)"><path class="big" d="M0,-8 C-10,-22 -32,-12 -24,6 C-18,18 0,28 0,34 C0,28 18,18 24,6 C32,-12 10,-22 0,-8Z" transform="scale(2.4)" fill="#e53935"/></g>
+<g transform="translate(150 240)"><g class="cat">
+ <polygon points="-38,-20 -30,-52 -10,-30" fill="#ffb74d"/><polygon points="38,-20 30,-52 10,-30" fill="#ffb74d"/>
+ <ellipse cx="0" cy="0" rx="45" ry="36" fill="#ffb74d"/>
+ <circle cx="-16" cy="-6" r="5" fill="#333"/><circle cx="16" cy="-6" r="5" fill="#333"/>
+ <polygon points="-5,6 5,6 0,12" fill="#e91e63"/>
+ <path d="M-20,10 L-55,4 M-20,15 L-55,18 M20,10 L55,4 M20,15 L55,18" stroke="#555" stroke-width="2"/>
+</g></g>
+<text x="150" y="40" class="nine">9 can!</text>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Yaşama, hayat.</p>
+<b>Etimolojik kökeni</b><p>Farsça</p>
+<b>Örnek cümle</b><p class="ex">“Kedilerin dokuz canı vardır.”</p>
+<button class="btn" onclick='speak("Can. Anlamı: Yaşama, hayat. Etimolojik kökeni: Farsça. Örnek cümle: Kedilerin dokuz canı vardır.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../bekir/">← Bekir</a><a href="../">Tüm harfler</a><a href="../colpan/">Çolpan →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

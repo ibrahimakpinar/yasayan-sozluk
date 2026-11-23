@@ -1,0 +1,22 @@
+
+*{box-sizing:border-box}
+body{margin:0;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;background:var(--c,#fff8e1);color:#3e2723;min-height:100vh;
+ background-image:radial-gradient(rgba(255,255,255,.55) 2px,transparent 2px);background-size:22px 22px}
+main{max-width:560px;margin:0 auto;padding:18px 16px 40px}
+.top{display:flex;align-items:center;gap:14px}
+.badge{flex:none;width:72px;height:72px;border-radius:22px;background:#fff;display:grid;place-items:center;font-size:44px;font-weight:bold;box-shadow:0 4px 0 rgba(0,0,0,.15)}
+h1{margin:0;font-size:40px;letter-spacing:1px}
+.harf{margin:0;font-size:15px;opacity:.75}
+.stage{background:#fff;border-radius:28px;margin:16px 0;overflow:hidden;box-shadow:0 6px 0 rgba(0,0,0,.12)}
+.stage svg{display:block;width:100%;height:auto}
+.card{background:#fff;border-radius:22px;padding:16px 18px;box-shadow:0 4px 0 rgba(0,0,0,.1);font-size:19px;line-height:1.45}
+.card p{margin:6px 0 12px}
+.card b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:1px;opacity:.6}
+.card .ex{font-style:italic}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-size:18px;font-weight:bold;background:#3e2723;color:#fff;cursor:pointer;margin-top:4px}
+nav{display:flex;justify-content:space-between;margin-top:18px;gap:8px}
+nav a{background:#fff;border-radius:999px;padding:10px 16px;text-decoration:none;color:#3e2723;font-weight:bold;box-shadow:0 3px 0 rgba(0,0,0,.12)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:18px}
+.grid a{display:block;background:var(--cc);border-radius:20px;padding:14px;text-align:center;text-decoration:none;color:#3e2723;box-shadow:0 4px 0 rgba(0,0,0,.12)}
+.grid a span{display:block;font-size:42px;font-weight:bold}
+footer{margin-top:24px;text-align:center;font-size:13px;opacity:.6}

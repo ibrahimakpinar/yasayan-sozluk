@@ -1,0 +1,50 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Melek · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.angel{animation:hover 3s ease-in-out infinite}
+@keyframes hover{50%{transform:translateY(-18px)}}
+.wl{transform-origin:110px 160px;animation:flapl .6s ease-in-out infinite alternate}
+.wr{transform-origin:190px 160px;animation:flapr .6s ease-in-out infinite alternate}
+@keyframes flapl{to{transform:rotate(14deg) scaleX(.85)}}
+@keyframes flapr{to{transform:rotate(-14deg) scaleX(.85)}}
+.halo{animation:glowh 1.5s ease-in-out infinite}
+@keyframes glowh{50%{stroke:#fff59d;stroke-width:9}}
+.spark{font-size:18px;fill:#ffd54f;animation:tw 2s ease-in-out infinite}
+</style></head>
+<body style="--c:#90caf9"><main>
+<div class="top"><div class="badge">M</div><div><p class="harf">M Harfi</p><h1>Melek</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Melek animasyonu">
+<rect width="300" height="300" fill="#e3f2fd"/>
+<text class="spark" style="animation-delay:0s" x="40" y="60">★</text><text class="spark" style="animation-delay:0.6s" x="250" y="50">★</text><text class="spark" style="animation-delay:1.2s" x="30" y="230">★</text><text class="spark" style="animation-delay:1.8s" x="265" y="240">★</text><text class="spark" style="animation-delay:0.9s" x="200" y="280">★</text><text class="spark" style="animation-delay:1.5s" x="90" y="285">★</text>
+<g class="angel">
+ <path class="wl" d="M110,160 L40,115 Q25,170 45,215Z" fill="#64b5f6" stroke="#1565c0" stroke-width="3"/>
+ <path class="wr" d="M190,160 L260,115 Q275,170 255,215Z" fill="#64b5f6" stroke="#1565c0" stroke-width="3"/>
+ <circle cx="150" cy="160" r="58" fill="#fff" stroke="#333" stroke-width="3"/>
+ <circle cx="133" cy="148" r="6" fill="#555"/><circle cx="167" cy="148" r="6" fill="#555"/>
+ <path d="M130,172 Q150,192 170,172" stroke="#333" stroke-width="3" fill="none"/>
+ <ellipse class="halo" cx="150" cy="82" rx="34" ry="10" fill="none" stroke="#fdd835" stroke-width="6"/>
+</g>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Tanrı ile insan arasında aracılık yaptığına inanılan, nurdan yaratılmış ruhani varlık.</p>
+<b>Etimolojik kökeni</b><p>Arapça</p>
+<b>Örnek cümle</b><p class="ex">“Benim annem melek gibidir.”</p>
+<button class="btn" onclick='speak("Melek. Anlamı: Tanrı ile insan arasında aracılık yaptığına inanılan, nurdan yaratılmış ruhani varlık. Etimolojik kökeni: Arapça. Örnek cümle: Benim annem melek gibidir.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../lale/">← Lale</a><a href="../">Tüm harfler</a><a href="../nihan/">Nihan →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

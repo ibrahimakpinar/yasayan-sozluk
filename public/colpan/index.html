@@ -1,0 +1,48 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Çolpan · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.night{animation:night 8s ease-in-out infinite}
+@keyframes night{0%{opacity:0}35%,90%{opacity:1}100%{opacity:0}}
+.tiny{animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+.venus{transform-box:fill-box;transform-origin:center;animation:shine 2.4s ease-in-out infinite}
+@keyframes shine{0%,100%{transform:scale(.9) rotate(-6deg)}50%{transform:scale(1.08) rotate(6deg)}}
+.halo{animation:tw 2.4s ease-in-out infinite}
+.lbl{font:bold 22px sans-serif;text-anchor:middle;fill:#fff9c4}
+</style></head>
+<body style="--c:#9fa8da"><main>
+<div class="top"><div class="badge">Ç</div><div><p class="harf">Ç Harfi</p><h1>Çolpan</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Çolpan animasyonu">
+<defs><radialGradient id="glow"><stop offset="0" stop-color="#fff9c4" stop-opacity=".9"/><stop offset="1" stop-color="#fff9c4" stop-opacity="0"/></radialGradient></defs>
+<rect width="300" height="300" fill="#ff8a65"/>
+<rect class="night" width="300" height="300" fill="#0d1b4c"/>
+<circle class="tiny" style="animation-delay:0.00s" cx="5" cy="10" r="1.5" fill="#fff"/><circle class="tiny" style="animation-delay:0.37s" cx="72" cy="51" r="2.2" fill="#fff"/><circle class="tiny" style="animation-delay:0.74s" cx="139" cy="92" r="2.9" fill="#fff"/><circle class="tiny" style="animation-delay:1.11s" cx="206" cy="133" r="1.5" fill="#fff"/><circle class="tiny" style="animation-delay:1.48s" cx="273" cy="174" r="2.2" fill="#fff"/><circle class="tiny" style="animation-delay:1.85s" cx="50" cy="45" r="2.9" fill="#fff"/><circle class="tiny" style="animation-delay:2.22s" cx="117" cy="86" r="1.5" fill="#fff"/><circle class="tiny" style="animation-delay:2.59s" cx="184" cy="127" r="2.2" fill="#fff"/><circle class="tiny" style="animation-delay:2.96s" cx="251" cy="168" r="2.9" fill="#fff"/><circle class="tiny" style="animation-delay:0.33s" cx="28" cy="39" r="1.5" fill="#fff"/><circle class="tiny" style="animation-delay:0.70s" cx="95" cy="80" r="2.2" fill="#fff"/><circle class="tiny" style="animation-delay:1.07s" cx="162" cy="121" r="2.9" fill="#fff"/><circle class="tiny" style="animation-delay:1.44s" cx="229" cy="162" r="1.5" fill="#fff"/><circle class="tiny" style="animation-delay:1.81s" cx="6" cy="33" r="2.2" fill="#fff"/><circle class="tiny" style="animation-delay:2.18s" cx="73" cy="74" r="2.9" fill="#fff"/><circle class="tiny" style="animation-delay:2.55s" cx="140" cy="115" r="1.5" fill="#fff"/><circle class="tiny" style="animation-delay:2.92s" cx="207" cy="156" r="2.2" fill="#fff"/><circle class="tiny" style="animation-delay:0.29s" cx="274" cy="27" r="2.9" fill="#fff"/><circle class="tiny" style="animation-delay:0.66s" cx="51" cy="68" r="1.5" fill="#fff"/><circle class="tiny" style="animation-delay:1.03s" cx="118" cy="109" r="2.2" fill="#fff"/><circle class="tiny" style="animation-delay:1.40s" cx="185" cy="150" r="2.9" fill="#fff"/><circle class="tiny" style="animation-delay:1.77s" cx="252" cy="21" r="1.5" fill="#fff"/>
+<circle class="halo" cx="150" cy="120" r="70" fill="url(#glow)"/>
+<g transform="translate(150 120)"><path class="venus" d="M0,-50 L12,-16 L48,-16 L19,6 L30,40 L0,19 L-30,40 L-19,6 L-48,-16 L-12,-16Z" fill="#fff176" stroke="#f9a825" stroke-width="3"/></g>
+<path d="M0,250 Q75,215 150,240 T300,235 V300 H0Z" fill="#33691e"/>
+<g transform="translate(60 228)"><circle cx="0" cy="-22" r="9" fill="#5d4037"/><rect x="-7" y="-14" width="14" height="24" rx="5" fill="#8d6e63"/><line x1="14" y1="-30" x2="10" y2="12" stroke="#5d4037" stroke-width="3"/></g>
+<text x="150" y="215" class="lbl">Venüs</text>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Çoban yıldızı, Venüs.</p>
+<b>Etimolojik kökeni</b><p>Türkçe</p>
+<b>Örnek cümle</b><p class="ex">“Akşam Çolpan&#x27;ı inceledim.”</p>
+<button class="btn" onclick='speak("Çolpan. Anlamı: Çoban yıldızı, Venüs. Etimolojik kökeni: Türkçe. Örnek cümle: Akşam Çolpan'ı inceledim.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../can/">← Can</a><a href="../">Tüm harfler</a><a href="../doga/">Doğa →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

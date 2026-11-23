@@ -1,0 +1,52 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lale · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.plant{transform-origin:150px 280px;animation:rise 6s ease-out infinite}
+@keyframes rise{0%{transform:scaleY(0)}30%,92%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+.pl{transform-origin:150px 130px;animation:openl 6s ease-out infinite}
+.pr{transform-origin:150px 130px;animation:openr 6s ease-out infinite}
+@keyframes openl{0%,30%{transform:rotate(25deg)}50%,90%{transform:rotate(-8deg)}}
+@keyframes openr{0%,30%{transform:rotate(-25deg)}50%,90%{transform:rotate(8deg)}}
+.bfly{animation:bfly 8s ease-in-out infinite}
+@keyframes bfly{0%{transform:translate(30px,60px) scaleX(1)}25%{transform:translate(240px,40px) scaleX(.3)}50%{transform:translate(250px,180px) scaleX(1)}75%{transform:translate(40px,170px) scaleX(.3)}100%{transform:translate(30px,60px)}}
+</style></head>
+<body style="--c:#ce93d8"><main>
+<div class="top"><div class="badge">L</div><div><p class="harf">L Harfi</p><h1>Lale</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Lale animasyonu">
+<rect width="300" height="300" fill="#f3e5f5"/>
+<path d="M0,280 H300 V300 H0Z" fill="#8d6e63"/>
+<g class="plant">
+ <rect x="146" y="120" width="8" height="160" fill="#66bb6a"/>
+ <path class="lleaf" d="M148,250 Q90,200 100,160 Q130,200 148,230Z" fill="#81c784" stroke="#388e3c" stroke-width="2"/>
+ <path class="rleaf" d="M152,230 Q210,190 220,150 Q180,170 152,210Z" fill="#81c784" stroke="#388e3c" stroke-width="2"/>
+ <g class="bloom">
+  <path class="pl" d="M150,130 Q105,120 112,70 Q135,80 150,100Z" fill="#ab47bc"/>
+  <path class="pr" d="M150,130 Q195,120 188,70 Q165,80 150,100Z" fill="#ab47bc"/>
+  <path d="M150,132 Q128,100 150,62 Q172,100 150,132Z" fill="#ce93d8" stroke="#7b1fa2" stroke-width="2"/>
+ </g>
+</g>
+<g class="bfly"><ellipse cx="-7" cy="0" rx="8" ry="11" fill="#ffb74d"/><ellipse cx="7" cy="0" rx="8" ry="11" fill="#ffb74d"/><rect x="-1.5" y="-9" width="3" height="18" fill="#333"/></g>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Zambakgillerden, yaprakları uzun ve mızraksı, çiçekleri kadeh biçiminde, türlü renkte süs bitkisi.</p>
+<b>Etimolojik kökeni</b><p>Farsça</p>
+<b>Örnek cümle</b><p class="ex">“Laleleri çok severim.”</p>
+<button class="btn" onclick='speak("Lale. Anlamı: Zambakgillerden, yaprakları uzun ve mızraksı, çiçekleri kadeh biçiminde, türlü renkte süs bitkisi. Etimolojik kökeni: Farsça. Örnek cümle: Laleleri çok severim.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../kivanc/">← Kıvanç</a><a href="../">Tüm harfler</a><a href="../melek/">Melek →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

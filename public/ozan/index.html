@@ -1,0 +1,50 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ozan · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.saz{transform-origin:110px 210px;animation:sway 2.4s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.str{animation:vib .12s linear infinite alternate}
+@keyframes vib{to{transform:translateX(1.5px)}}
+.note{font:bold 34px sans-serif;opacity:0;animation:float 2.7s ease-out infinite}
+@keyframes float{0%{opacity:0;transform:translate(0,0)}20%{opacity:1}100%{opacity:0;transform:translate(40px,-140px)}}
+.tap{font:bold 16px sans-serif;text-anchor:middle;fill:#00695c}
+</style></head>
+<body style="--c:#80cbc4"><main>
+<div class="top"><div class="badge">O</div><div><p class="harf">O Harfi</p><h1>Ozan</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Ozan animasyonu">
+<rect width="300" height="300" fill="#e0f2f1"/>
+<g class="saz" onclick="playTune()" style="cursor:pointer">
+ <g transform="rotate(40 110 210)">
+  <rect x="100" y="40" width="20" height="130" fill="#5d4037"/>
+  <polygon points="96,40 124,40 130,14 90,14" fill="#3e2723"/>
+  <ellipse cx="110" cy="210" rx="52" ry="62" fill="#d7ccc8" stroke="#3e2723" stroke-width="4"/>
+  <ellipse cx="110" cy="200" rx="18" ry="22" fill="#3e2723"/>
+  <line class="str" style="animation-delay:0.0s" x1="104" y1="20" x2="104" y2="250" stroke="#eceff1" stroke-width="1.5"/><line class="str" style="animation-delay:0.1s" x1="110" y1="20" x2="110" y2="250" stroke="#eceff1" stroke-width="1.5"/><line class="str" style="animation-delay:0.2s" x1="116" y1="20" x2="116" y2="250" stroke="#eceff1" stroke-width="1.5"/>
+ </g>
+</g>
+<text class="note" style="animation-delay:0.0s" x="150" y="150" fill="#e53935">♪</text><text class="note" style="animation-delay:0.45s" x="172" y="150" fill="#fb8c00">♪</text><text class="note" style="animation-delay:0.9s" x="194" y="150" fill="#fdd835">♪</text><text class="note" style="animation-delay:1.35s" x="216" y="150" fill="#43a047">♪</text><text class="note" style="animation-delay:1.8s" x="238" y="150" fill="#1e88e5">♪</text><text class="note" style="animation-delay:2.25s" x="260" y="150" fill="#8e24aa">♪</text>
+<text x="215" y="285" class="tap">Saza dokun! 👆</text>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Eski Türklerde saz çalarak şiirler, destanlar söyleyen halk şairi.</p>
+<b>Etimolojik kökeni</b><p>Türkçe</p>
+<b>Örnek cümle</b><p class="ex">“Ozanlar şiirlerini çok güzel söylediler.”</p>
+<button class="btn" onclick='speak("Ozan. Anlamı: Eski Türklerde saz çalarak şiirler, destanlar söyleyen halk şairi. Etimolojik kökeni: Türkçe. Örnek cümle: Ozanlar şiirlerini çok güzel söylediler.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../nihan/">← Nihan</a><a href="../">Tüm harfler</a><a href="../asel/">Asel →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

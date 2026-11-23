@@ -1,0 +1,55 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bekir · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.sky{animation:sky 6s ease-in-out infinite}
+@keyframes sky{0%{fill:#1a237e}40%{fill:#ffb74d}100%{fill:#81d4fa}}
+.rays{transform-origin:150px 150px;animation:spin 12s linear infinite}
+.num{font:bold 20px sans-serif;text-anchor:middle;fill:#424242}
+.min{transform-origin:150px 150px;animation:spin 1.5s linear infinite}
+.hour{transform-origin:150px 150px;animation:hour 6s ease-in-out infinite}
+@keyframes hour{0%{transform:rotate(150deg)}60%,100%{transform:rotate(210deg)}}
+.clock{transform-origin:150px 150px;animation:ring 6s infinite}
+@keyframes ring{0%,62%,100%{transform:rotate(0)}64%,68%,72%,76%{transform:rotate(8deg)}66%,70%,74%,78%{transform:rotate(-8deg)}80%{transform:rotate(0)}}
+.hello{font:bold 28px sans-serif;text-anchor:middle;fill:#fff;stroke:#e65100;stroke-width:1;opacity:0;animation:hello 6s infinite}
+@keyframes hello{0%,60%{opacity:0}70%,95%{opacity:1}100%{opacity:0}}
+</style></head>
+<body style="--c:#ffd54f"><main>
+<div class="top"><div class="badge">B</div><div><p class="harf">B Harfi</p><h1>Bekir</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Bekir animasyonu">
+<rect class="sky" width="300" height="300"/>
+<g class="rays"><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(0 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(30 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(60 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(90 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(120 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(150 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(180 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(210 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(240 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(270 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(300 150 150)"/><rect x="147" y="10" width="6" height="40" rx="3" fill="#ffe082" transform="rotate(330 150 150)"/></g>
+<g class="clock">
+ <circle cx="112" cy="78" r="18" fill="#e53935"/><circle cx="188" cy="78" r="18" fill="#e53935"/>
+ <circle cx="150" cy="150" r="78" fill="#fffde7" stroke="#424242" stroke-width="8"/>
+ <rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(0 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(30 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(60 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(90 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(120 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(150 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(180 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(210 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(240 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(270 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(300 150 150)"/><rect x="148" y="80" width="4" height="12" fill="#616161" transform="rotate(330 150 150)"/>
+ <text x="150" y="108" class="num">12</text><text x="198" y="158" class="num">3</text>
+ <text x="150" y="208" class="num">6</text><text x="102" y="158" class="num">9</text>
+ <rect class="hour" x="146" y="105" width="8" height="48" rx="4" fill="#212121"/>
+ <rect class="min" x="148" y="88" width="4" height="64" rx="2" fill="#424242"/>
+ <circle cx="150" cy="150" r="7" fill="#e53935"/>
+</g>
+<text x="150" y="275" class="hello">Günaydın! ☀️</text>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Sabahları erken kalkmayı alışkanlık edinen kimse.</p>
+<b>Etimolojik kökeni</b><p>Arapça</p>
+<b>Örnek cümle</b><p class="ex">“Benim babam çok bekirdir.”</p>
+<button class="btn" onclick='speak("Bekir. Anlamı: Sabahları erken kalkmayı alışkanlık edinen kimse. Etimolojik kökeni: Arapça. Örnek cümle: Benim babam çok bekirdir.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../asel/">← Asel</a><a href="../">Tüm harfler</a><a href="../can/">Can →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

@@ -1,0 +1,47 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fahriye · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.star{transform-origin:150px 250px;animation:jump 1.6s ease-in-out infinite}
+@keyframes jump{0%,100%{transform:translateY(0) scale(1,1)}10%{transform:scale(1.1,.9)}45%{transform:translateY(-30px) scale(.95,1.05)}}
+.medal{transform-origin:230px 180px;animation:swing 2s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(12deg)}}
+.one{font:bold 20px sans-serif;text-anchor:middle;fill:#fff}
+.conf{animation:fall 3s linear infinite}
+@keyframes fall{from{transform:translateY(0) rotate(0)}to{transform:translateY(320px) rotate(540deg)}}
+.bravo{font:bold 26px sans-serif;text-anchor:middle;fill:#ef6c00}
+</style></head>
+<body style="--c:#fff59d"><main>
+<div class="top"><div class="badge">F</div><div><p class="harf">F Harfi</p><h1>Fahriye</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Fahriye animasyonu">
+<rect width="300" height="300" fill="#fffde7"/>
+<rect class="conf" style="animation-delay:0.00s" x="0" y="-10" width="8" height="12" fill="#e53935"/><rect class="conf" style="animation-delay:0.31s" x="37" y="-10" width="8" height="12" fill="#43a047"/><rect class="conf" style="animation-delay:0.62s" x="74" y="-10" width="8" height="12" fill="#1e88e5"/><rect class="conf" style="animation-delay:0.93s" x="111" y="-10" width="8" height="12" fill="#fdd835"/><rect class="conf" style="animation-delay:1.24s" x="148" y="-10" width="8" height="12" fill="#8e24aa"/><rect class="conf" style="animation-delay:1.55s" x="185" y="-10" width="8" height="12" fill="#e53935"/><rect class="conf" style="animation-delay:1.86s" x="222" y="-10" width="8" height="12" fill="#43a047"/><rect class="conf" style="animation-delay:2.17s" x="259" y="-10" width="8" height="12" fill="#1e88e5"/><rect class="conf" style="animation-delay:2.48s" x="6" y="-10" width="8" height="12" fill="#fdd835"/><rect class="conf" style="animation-delay:2.79s" x="43" y="-10" width="8" height="12" fill="#8e24aa"/><rect class="conf" style="animation-delay:0.10s" x="80" y="-10" width="8" height="12" fill="#e53935"/><rect class="conf" style="animation-delay:0.41s" x="117" y="-10" width="8" height="12" fill="#43a047"/><rect class="conf" style="animation-delay:0.72s" x="154" y="-10" width="8" height="12" fill="#1e88e5"/><rect class="conf" style="animation-delay:1.03s" x="191" y="-10" width="8" height="12" fill="#fdd835"/><rect class="conf" style="animation-delay:1.34s" x="228" y="-10" width="8" height="12" fill="#8e24aa"/><rect class="conf" style="animation-delay:1.65s" x="265" y="-10" width="8" height="12" fill="#e53935"/><rect class="conf" style="animation-delay:1.96s" x="12" y="-10" width="8" height="12" fill="#43a047"/><rect class="conf" style="animation-delay:2.27s" x="49" y="-10" width="8" height="12" fill="#1e88e5"/><rect class="conf" style="animation-delay:2.58s" x="86" y="-10" width="8" height="12" fill="#fdd835"/><rect class="conf" style="animation-delay:2.89s" x="123" y="-10" width="8" height="12" fill="#8e24aa"/><rect class="conf" style="animation-delay:0.20s" x="160" y="-10" width="8" height="12" fill="#e53935"/><rect class="conf" style="animation-delay:0.51s" x="197" y="-10" width="8" height="12" fill="#43a047"/><rect class="conf" style="animation-delay:0.82s" x="234" y="-10" width="8" height="12" fill="#1e88e5"/><rect class="conf" style="animation-delay:1.13s" x="271" y="-10" width="8" height="12" fill="#fdd835"/>
+<g class="star"><g transform="translate(150 150) scale(2)"><path d="M0,-50 L12,-16 L48,-16 L19,6 L30,40 L0,19 L-30,40 L-19,6 L-48,-16 L-12,-16Z" fill="#fff176" stroke="#424242" stroke-width="2"/>
+ <circle cx="-9" cy="-8" r="4" fill="#333"/><circle cx="9" cy="-8" r="4" fill="#333"/>
+ <circle cx="-15" cy="2" r="3.5" fill="#e53935"/><circle cx="15" cy="2" r="3.5" fill="#e53935"/>
+ <path d="M-10,4 Q0,14 10,4" stroke="#333" stroke-width="2" fill="none"/></g></g>
+<g class="medal"><path d="M215,180 L228,212 M245,180 L232,212" stroke="#1e88e5" stroke-width="7"/><circle cx="230" cy="228" r="20" fill="#ffc107" stroke="#ff8f00" stroke-width="3"/><text x="230" y="236" class="one">1</text></g>
+<text x="150" y="285" class="bravo">Aferin! 🏆</text>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Onurla, gururla ilgili.</p>
+<b>Etimolojik kökeni</b><p>Arapça</p>
+<b>Örnek cümle</b><p class="ex">“Yarışmayı kazanınca annem benden fahriyeyle bahsetti.”</p>
+<button class="btn" onclick='speak("Fahriye. Anlamı: Onurla, gururla ilgili. Etimolojik kökeni: Arapça. Örnek cümle: Yarışmayı kazanınca annem benden fahriyeyle bahsetti.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../emir/">← Emir</a><a href="../">Tüm harfler</a><a href="../giray/">Giray →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

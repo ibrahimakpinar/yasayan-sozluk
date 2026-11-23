@@ -1,0 +1,46 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doğa · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.tree{animation:grow 6s ease-out infinite}
+@keyframes grow{0%{transform:scale(0)}25%,92%{transform:scale(1)}100%{transform:scale(0)}}
+.flower{animation:grow 6s ease-out infinite}
+.sun{transform-origin:240px 60px;animation:spin 10s linear infinite}
+.cloud{animation:drift 9s linear infinite}
+@keyframes drift{from{transform:translateX(-120px)}to{transform:translateX(320px)}}
+.bird{animation:fly 7s linear infinite}
+@keyframes fly{0%{transform:translate(-40px,110px)}50%{transform:translate(150px,90px) scaleY(.6)}100%{transform:translate(340px,110px)}}
+</style></head>
+<body style="--c:#a5d6a7"><main>
+<div class="top"><div class="badge">D</div><div><p class="harf">D Harfi</p><h1>Doğa</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Doğa animasyonu">
+<rect width="300" height="300" fill="#b3e5fc"/>
+<g class="sun"><circle cx="240" cy="60" r="26" fill="#ffeb3b"/><line x1="240" y1="22" x2="240" y2="10" stroke="#fdd835" stroke-width="4" stroke-linecap="round" transform="rotate(0 240 60)"/><line x1="240" y1="22" x2="240" y2="10" stroke="#fdd835" stroke-width="4" stroke-linecap="round" transform="rotate(45 240 60)"/><line x1="240" y1="22" x2="240" y2="10" stroke="#fdd835" stroke-width="4" stroke-linecap="round" transform="rotate(90 240 60)"/><line x1="240" y1="22" x2="240" y2="10" stroke="#fdd835" stroke-width="4" stroke-linecap="round" transform="rotate(135 240 60)"/><line x1="240" y1="22" x2="240" y2="10" stroke="#fdd835" stroke-width="4" stroke-linecap="round" transform="rotate(180 240 60)"/><line x1="240" y1="22" x2="240" y2="10" stroke="#fdd835" stroke-width="4" stroke-linecap="round" transform="rotate(225 240 60)"/><line x1="240" y1="22" x2="240" y2="10" stroke="#fdd835" stroke-width="4" stroke-linecap="round" transform="rotate(270 240 60)"/><line x1="240" y1="22" x2="240" y2="10" stroke="#fdd835" stroke-width="4" stroke-linecap="round" transform="rotate(315 240 60)"/></g>
+<g class="cloud"><ellipse cx="60" cy="60" rx="30" ry="14" fill="#fff"/><ellipse cx="80" cy="52" rx="20" ry="14" fill="#fff"/></g>
+<path class="bird" d="M0,0 q8,-8 16,0 q8,-8 16,0" stroke="#37474f" stroke-width="3" fill="none"/>
+<path d="M-20,300 Q60,170 170,300Z" fill="#9ccc65"/>
+<path d="M90,300 Q220,160 330,240 V300Z" fill="#7cb342"/>
+<g class="tree" style="animation-delay:0s;transform-origin:70px 225px"><rect x="64" y="165" width="12" height="60" fill="#795548"/><circle cx="70" cy="155" r="26" fill="#43a047"/><circle cx="52" cy="170" r="18" fill="#66bb6a"/><circle cx="88" cy="170" r="18" fill="#66bb6a"/></g><g class="tree" style="animation-delay:0.6s;transform-origin:225px 205px"><rect x="219" y="145" width="12" height="60" fill="#795548"/><circle cx="225" cy="135" r="26" fill="#43a047"/><circle cx="207" cy="150" r="18" fill="#66bb6a"/><circle cx="243" cy="150" r="18" fill="#66bb6a"/></g><g class="flower" style="animation-delay:1.2s;transform-origin:120px 262px"><line x1="120" y1="262" x2="120" y2="240" stroke="#388e3c" stroke-width="3"/><circle cx="120" cy="232" r="6" fill="#e91e63" transform="rotate(0 120 238)"/><circle cx="120" cy="232" r="6" fill="#e91e63" transform="rotate(72 120 238)"/><circle cx="120" cy="232" r="6" fill="#e91e63" transform="rotate(144 120 238)"/><circle cx="120" cy="232" r="6" fill="#e91e63" transform="rotate(216 120 238)"/><circle cx="120" cy="232" r="6" fill="#e91e63" transform="rotate(288 120 238)"/><circle cx="120" cy="238" r="4" fill="#ffeb3b"/></g><g class="flower" style="animation-delay:1.5s;transform-origin:165px 255px"><line x1="165" y1="255" x2="165" y2="233" stroke="#388e3c" stroke-width="3"/><circle cx="165" cy="225" r="6" fill="#ff7043" transform="rotate(0 165 231)"/><circle cx="165" cy="225" r="6" fill="#ff7043" transform="rotate(72 165 231)"/><circle cx="165" cy="225" r="6" fill="#ff7043" transform="rotate(144 165 231)"/><circle cx="165" cy="225" r="6" fill="#ff7043" transform="rotate(216 165 231)"/><circle cx="165" cy="225" r="6" fill="#ff7043" transform="rotate(288 165 231)"/><circle cx="165" cy="231" r="4" fill="#ffeb3b"/></g><g class="flower" style="animation-delay:1.8s;transform-origin:260px 250px"><line x1="260" y1="250" x2="260" y2="228" stroke="#388e3c" stroke-width="3"/><circle cx="260" cy="220" r="6" fill="#ab47bc" transform="rotate(0 260 226)"/><circle cx="260" cy="220" r="6" fill="#ab47bc" transform="rotate(72 260 226)"/><circle cx="260" cy="220" r="6" fill="#ab47bc" transform="rotate(144 260 226)"/><circle cx="260" cy="220" r="6" fill="#ab47bc" transform="rotate(216 260 226)"/><circle cx="260" cy="220" r="6" fill="#ab47bc" transform="rotate(288 260 226)"/><circle cx="260" cy="226" r="4" fill="#ffeb3b"/></g>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Kendi kuralları çerçevesinde sürekli gelişen, değişen canlı ve cansız varlıkların hepsi, tabiat.</p>
+<b>Etimolojik kökeni</b><p>Türkçe</p>
+<b>Örnek cümle</b><p class="ex">“Doğamızı koruyalım.”</p>
+<button class="btn" onclick='speak("Doğa. Anlamı: Kendi kuralları çerçevesinde sürekli gelişen, değişen canlı ve cansız varlıkların hepsi, tabiat. Etimolojik kökeni: Türkçe. Örnek cümle: Doğamızı koruyalım.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../colpan/">← Çolpan</a><a href="../">Tüm harfler</a><a href="../emir/">Emir →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>

@@ -1,0 +1,46 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kıvanç · Yaşayan Sözlük</title>
+<link rel="stylesheet" href="../style.css"><style>
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes flash{50%{opacity:.4}}
+@media (prefers-reduced-motion: reduce){svg *{animation-duration:20s!important}}
+
+.key{animation:press 2s infinite}
+@keyframes press{0%,12%{fill:#ffeb3b;transform:translateY(3px)}20%,100%{fill:#fff;transform:none}}
+.note{font:bold 30px sans-serif;opacity:0;animation:float 3s ease-out infinite}
+@keyframes float{0%{opacity:0;transform:translateY(0)}20%{opacity:1}100%{opacity:0;transform:translate(10px,-170px)}}
+.blush{animation:tw 1.5s ease-in-out infinite}
+.face{transform-origin:150px 105px;animation:sway 2s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+</style></head>
+<body style="--c:#f8bbd0"><main>
+<div class="top"><div class="badge">K</div><div><p class="harf">K Harfi</p><h1>Kıvanç</h1></div></div>
+<div class="stage"><svg viewBox="0 0 300 300" role="img" aria-label="Kıvanç animasyonu">
+<rect width="300" height="300" fill="#fce4ec"/>
+<g class="face"><circle cx="150" cy="105" r="72" fill="#fff" stroke="#333" stroke-width="4"/>
+ <g class="eyes"><circle cx="122" cy="88" r="11" fill="#333"/><circle cx="178" cy="88" r="11" fill="#333"/><circle cx="126" cy="84" r="4" fill="#fff"/><circle cx="182" cy="84" r="4" fill="#fff"/></g>
+ <circle class="blush" cx="98" cy="118" r="11" fill="#f48fb1"/><circle class="blush" cx="202" cy="118" r="11" fill="#f48fb1"/>
+ <path d="M108,118 Q150,170 192,118Z" fill="#e53935" stroke="#333" stroke-width="3"/></g>
+<rect x="20" y="205" width="260" height="80" rx="6" fill="#333"/>
+<rect class="key" style="animation-delay:0.0s" x="26" y="211" width="28" height="68" rx="3" fill="#fff"/><rect class="key" style="animation-delay:0.25s" x="57" y="211" width="28" height="68" rx="3" fill="#fff"/><rect class="key" style="animation-delay:0.5s" x="88" y="211" width="28" height="68" rx="3" fill="#fff"/><rect class="key" style="animation-delay:0.75s" x="119" y="211" width="28" height="68" rx="3" fill="#fff"/><rect class="key" style="animation-delay:1.0s" x="150" y="211" width="28" height="68" rx="3" fill="#fff"/><rect class="key" style="animation-delay:1.25s" x="181" y="211" width="28" height="68" rx="3" fill="#fff"/><rect class="key" style="animation-delay:1.5s" x="212" y="211" width="28" height="68" rx="3" fill="#fff"/><rect class="key" style="animation-delay:1.75s" x="243" y="211" width="28" height="68" rx="3" fill="#fff"/><rect x="48" y="211" width="16" height="40" fill="#212121"/><rect x="79" y="211" width="16" height="40" fill="#212121"/><rect x="141" y="211" width="16" height="40" fill="#212121"/><rect x="172" y="211" width="16" height="40" fill="#212121"/><rect x="203" y="211" width="16" height="40" fill="#212121"/>
+<text class="note" style="animation-delay:0.0s" x="40" y="200" fill="#e53935">♪</text><text class="note" style="animation-delay:0.5s" x="85" y="200" fill="#fb8c00">♫</text><text class="note" style="animation-delay:1.0s" x="130" y="200" fill="#43a047">♪</text><text class="note" style="animation-delay:1.5s" x="175" y="200" fill="#1e88e5">♬</text><text class="note" style="animation-delay:2.0s" x="220" y="200" fill="#8e24aa">♪</text><text class="note" style="animation-delay:2.5s" x="265" y="200" fill="#e91e63">♫</text>
+</svg></div>
+<div class="card">
+<b>Anlamı</b><p>Övünç, övünme.</p>
+<b>Etimolojik kökeni</b><p>Türkçe</p>
+<b>Örnek cümle</b><p class="ex">“Piyano çalmakta kıvanç duyuyorum.”</p>
+<button class="btn" onclick='speak("Kıvanç. Anlamı: Övünç, övünme. Etimolojik kökeni: Türkçe. Örnek cümle: Piyano çalmakta kıvanç duyuyorum.")'>🔊 Dinle</button>
+</div>
+<nav><a href="../jale/">← Jale</a><a href="../">Tüm harfler</a><a href="../lale/">Lale →</a></nav>
+</main><script>
+function speak(t){if(!('speechSynthesis' in window)){alert('Bu cihaz sesli okumayı desteklemiyor.');return}
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.9;
+ const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith('tr'));if(v)u.voice=v;speechSynthesis.speak(u)}
+if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+function playTune(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C();
+ [392,440,494,523,494,440,392,330].forEach((f,i)=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;
+ const t=a.currentTime+i*.22;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);
+ o.connect(g).connect(a.destination);o.start(t);o.stop(t+.32)})}
+</script></body></html>
